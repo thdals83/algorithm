@@ -10,16 +10,12 @@ def make_Array():
     return list
 
 def Plus(a,x,y):
-    count=0
     max=0
     j=y
-    while count<3:
+    for i in range(3):
         max=max+a[x][j]+a[x+2][j]
         j=j+1
-        count=count+1
-
     max=max+a[x+1][y+1]
-
     return max
 
 def compare_Array(arr):
