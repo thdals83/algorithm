@@ -1,39 +1,35 @@
 import random
+import queue
 
-def make_Array():
-    list=[[1,1,1,0,0,0],
-          [0,1,0,0,0,0],
-          [1,1,1,0,0,0],
-          [0,0,2,4,4,0],
-          [0,0,0,2,0,0],
-          [0,0,1,2,4,0]]
-    return list
+def made(x):
+    arr=[]
+    for i in range(x): arr.append(random.randint(1,300))
+    return arr
 
-def Plus(a,x,y):
-    max=0
-    j=y
-    for i in range(3):
-        max=max+a[x][j]+a[x+2][j]
-        j=j+1
-    max=max+a[x+1][y+1]
-    return max
+def radix_sort(list,n):
+    baskets=[]
+    tmp=0
+    factor=1
+    for i in range(10): baskets.append(queue.Queue()) #10인 이유는 0~9까지의 버킷
 
-def compare_Array(arr):
-    a=0
-    for i in range(len(arr)-2):
-        for j in range(len(arr[0])-2):
-            if(a==0):
-                max=Plus(arr,i,j)
-                tmp=max
-                a=1
-            max = Plus(arr, i, j)
-            if(tmp<max):
-                tmp=max
+    for i in range(4): #4인이유는 일단 4개의 자리수 칸들
+        for j in range(n):
+            x=int((list[j]//factor)%10)
+            baskets[x].put(list[j])
 
-    return tmp
+        for k in range(10):
+            while baskets[k].empty()==False:
+                if tmp>n-1: tmp=0
+                list[tmp]=baskets[k].get()
+                tmp=tmp+1
+        factor=factor*10
+
+    list.reverse()
+    print(list)
+
 
 if __name__=="__main__":
-    list=make_Array()
-    maximum=compare_Array(list)
-
-    print(maximum)
+    x = int(input("개수 입력:"))
+    input=made(x)
+    print(input)
+    radix_sort(input,x)
