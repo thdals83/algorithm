@@ -1,7 +1,11 @@
-a,b,c=map(int,input().split())
+x=int(input())
 
-if(b>=c):
-    print("-1")
-
-else:
-    print(a//(c-b)+1)
+i=1
+while True:
+    a=1
+    b=3*i*(i-1)+2
+    if(a<=x<b):
+        print(i)
+        break
+    a=b
+    i=i+1
