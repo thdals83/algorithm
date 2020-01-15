@@ -1,11 +1,18 @@
-x=int(input())
+num=int(input())
 
 i=1
+a=0
 while True:
-    a=1
-    b=3*i*(i-1)+2
-    if(a<=x<b):
-        print(i)
-        break
-    a=b
+    b=a+i
+    if(a<num<=b):break
     i=i+1
+    a=b
+
+a=a+1
+mo=num-a+1
+ja=i-mo+1
+
+if(i%2==0):
+    print("%d/%d" % (mo, ja))
+else:
+    print("%d/%d" % (ja, mo))
