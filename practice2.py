@@ -1,8 +1,14 @@
-a,b,c=map(int,input().split())
+x=int(input())
 
-n=(c-b)/(a-b)
-if(n==int(n)):
-    print(int(n))
-else:
-    print(int(n)+1)
+for i in range(x):
+    h,w,n=map(int,input().split())
+
+    if(n%h==0):
+        print("%d%02d"%(h,n//h))
+    else:
+        print("%d%02d" % (n % h, n // h + 1))
+
+
+
+
 
