@@ -1,20 +1,22 @@
-arr=[[0]*14 for i in range(15)]
+x=int(input())
 
-for i in range(14):
-    arr[0][i]=i+1
-    arr[i][0]=1
-arr[14][0]=1
+def aa(e):
+    a = 1
+    c = 0
+    d = 0
+    count=1
+    while True:
+        for i in range(2):
+            c = c + a
+            if (d + 1 <=e<=c):
+                return count
+            d = c
+            count=count+1
+        a = a + 1
 
-for i in range(1,15):
-    for j in range(1,14):
-        arr[i][j]=arr[i][j-1]+arr[i-1][j]
-
-
-t=int(input())
-for i in range(t):
-    a = int(input())
-    b = int(input())
-    print(arr[a][b-1])
+for i in range(x):
+    a,b=map(int,input().split())
+    print(aa(b-a))
 
 
 
