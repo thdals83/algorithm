@@ -1,6 +1,13 @@
-x,y,w,h=map(int,input().split())
+a,b=map(int,input().split())
+c,d=map(int,input().split())
+e,f=map(int,input().split())
 
-q=w-x
-e=h-y
+if(a==c and a!=e):x=e
+elif(a==e and a!=c):x=c
+else:x=a
 
-print(min(x,y,q,e))
+if(b==d and b!=f):y=f
+elif(b==f and b!=d):y=d
+else:y=b
+
+print(x,y)
