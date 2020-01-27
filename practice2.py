@@ -1,13 +1,12 @@
-a,b=map(int,input().split())
-c,d=map(int,input().split())
-e,f=map(int,input().split())
+while True:
+    a, b, c = map(int, input().split())
+    if (a == 0 and b == 0 and c == 0): break
 
-if(a==c and a!=e):x=e
-elif(a==e and a!=c):x=c
-else:x=a
-
-if(b==d and b!=f):y=f
-elif(b==f and b!=d):y=d
-else:y=b
-
-print(x,y)
+    if (a**2 +b**2==c**2):
+        print("right")
+    elif(a**2 +c**2==b**2):
+        print("right")
+    elif(c**2 +b**2==a**2):
+        print("right")
+    else:
+        print("wrong")
