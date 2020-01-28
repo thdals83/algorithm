@@ -1,6 +1,9 @@
-import math
+def fact(x):
 
-x=int(input())
-y=(x**2)*math.pi
-print("%.6f"%y)
-print("%.6f"%((x**2)*2))
+    if x<=1:return 1
+    else:return x*fact(x-1)
+
+if __name__=="__main__":
+    x=int(input())
+    print(fact(x))
+
