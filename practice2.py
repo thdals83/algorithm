@@ -1,8 +1,16 @@
-def fibo(x):
+def make(i,j):
+    while(i!=0):
+        if (i % 3 == 1 and j % 3 == 1):
+            print(" ", end="")
+            return None
+        i=i//3
+        j=j//3
+    print("*", end="")
 
-    if(x<=1):return x
-    else:return fibo(x-1)+fibo(x-2)
 
 if __name__=="__main__":
     x=int(input())
-    print(fibo(x))
+    for i in range(0,x):
+        for j in range(0,x):
+            make(i,j)
+        print("")
